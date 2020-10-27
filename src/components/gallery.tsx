@@ -36,15 +36,21 @@ class Gallery extends React.Component<PropsType> {
             this.props.reset('imageForm')
         }
 
-        return <div>
-            <h3 className={style.head__title}>Please download the image</h3>
+        return <div className={style.main__box}>
+            <div className={style.mainTitle__box}>
             <ImageForm onSubmit={onSubmit} />
-            <h3 className={style.bot__title}>Images: </h3>
+            </div>
+        
+            <div>
+            <p className={style.bot__title}>You can see description or delete/download image,just focus on it: </p>
             {
                 this.props.item.length ?
                     <Items item={this.props.item} deleteGalleryItem={this.props.deleteGalleryItem} />
                     : <h4 className={style.botTitle}>Storage is empty you can upload something</h4>
             }
+            </div>
+
+         
         </div >
     }
 }

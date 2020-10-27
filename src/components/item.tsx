@@ -16,37 +16,38 @@ const Item: React.FC<PropsType> = (props) => {
 
     return <div className={style.gallery__item}>
 
-        <div>
-            <img alt='img' src={props.item.img} />
-        </div>
+        <div className={style.galleryItem__main}>
+            <div className={style.galleryItem__img}>
+                <img className={style.galleryItem__img__img} alt='img' src={props.item.img} />
+                <div className={style.galleryItem__descr}>
+                    <a className={style.galleryItem__btn} href={props.item.img} download={props.item.img} >Download</a>
+                    <span className={style.itemText__first}>
+                        Title: <span className={style.itemText__second}> {props.item.title} </span>
+                    </span>
+                    <span className={style.itemText__first}>
+                        Description: <span className={style.itemText__second}>{props.item.descr}  </span>
+                    </span>
+                    <span className={style.itemText__first}>
+                        Name: <span className={style.itemText__second}>{props.item.name} </span>
+                    </span>
+                    <span className={style.itemText__first}>
+                        Size: <span className={style.itemText__second}>{props.item.size} byte </span>
+                    </span>
+                    <span className={style.itemText__first}>
+                        Type: <span className={style.itemText__second}>{props.item.type}</span>
+                    </span>
+                    <span className={style.itemText__first}>
+                        Width: <span className={style.itemText__second}>{newImg.width} pixels</span>
+                    </span>
+                    <span className={style.itemText__first}>
+                        Height: <span className={style.itemText__second}>{newImg.height} pixels</span>
+                    </span>
+                    <button className={style.galleryItem__btn} onClick={
+                        () => { props.deleteGalleryItem(props.item.title) }
+                    }>Delete</button>
 
-        <div>
-            <a href={props.item.img} download={props.item.img} >Download</a>
-            <span className={style.itemText__first}>
-                Title: <span className={style.itemText__second}> {props.item.title} </span>
-            </span>
-            <span className={style.itemText__first}>
-                Description: <span className={style.itemText__second}>{props.item.descr}  </span>
-            </span>
-            <span className={style.itemText__first}>
-                Name: <span className={style.itemText__second}>{props.item.name} </span>
-            </span>
-            <span className={style.itemText__first}>
-                Size: <span className={style.itemText__second}>{props.item.size} byte </span>
-            </span>
-            <span className={style.itemText__first}>
-                Type: <span className={style.itemText__second}>{props.item.type}</span>
-            </span>
-            <span className={style.itemText__first}>
-                Width: <span className={style.itemText__second}>{newImg.width} pixels</span>
-            </span>
-            <span className={style.itemText__first}>
-                Height: <span className={style.itemText__second}>{newImg.height} pixels</span>
-            </span>
-            <button onClick={
-                () => { props.deleteGalleryItem(props.item.title) }
-            }>Delete</button>
-
+                </div>
+            </div>
         </div>
     </div>
 }

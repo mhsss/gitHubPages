@@ -29,8 +29,10 @@ const ImageForm: React.FC<InjectedFormProps> = React.memo((props) => {
                 <Field validate={[requiredField]} name="file" type="file" component={FileSubmitField} />
                 </label>
             </div>
+            <div className={style.form__submitBtn}>
+                <button >Submit</button>
+            </div>
 
-            <button>Submit</button>
         </form>
     </div>
 }
