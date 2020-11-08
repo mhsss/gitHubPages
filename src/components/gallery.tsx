@@ -41,7 +41,7 @@ class Gallery extends React.Component<PropsType> {
             <ImageForm onSubmit={onSubmit} />
             </div>
         
-            <div>
+            <div className={style.maxImg__box}>
             <p className={style.bot__title}>You can see description or delete/download image,just focus on it: </p>
             {
                 this.props.item.length ?
