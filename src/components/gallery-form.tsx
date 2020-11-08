@@ -13,7 +13,7 @@ const ImageForm: React.FC<InjectedFormProps> = React.memo((props) => {
         <form onSubmit={props.handleSubmit}>
 
             <div className={`${style.item__title} ${style.item__text}`}>
-                <label>Please write image title
+                <label className={style.selectTitle}>Please write image title
                     <Field validate={[requiredField, maxLength5]} component={Input} type={'text'} name={'title'} />
                 </label>
             </div>
